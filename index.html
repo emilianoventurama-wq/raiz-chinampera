@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Raíz Chinampera: red de comercio justo entre chinamperas y chinamperos de Xochimilco y la ciudad.">
+<title>Raíz Chinampera | De la chinampa a tu mesa</title>
+<style>
+:root{
+  --bg:#f7f4ea; --surface:#fff; --text:#17352a; --muted:#496158;
+  --primary:#1f6b4d; --primary-dark:#124735; --accent:#d6a642;
+  --border:#cbd8d0; --focus:#0b5fff; --hero:#e4efe7;
+  --font-size:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;font-size:var(--font-size);line-height:1.65;color:var(--text);background:var(--bg)}
+a{color:var(--primary-dark)}
+a:focus,button:focus,input:focus{outline:3px solid var(--focus);outline-offset:3px}
+.skip{position:absolute;left:10px;top:-60px;background:#fff;color:#000;padding:10px 14px;z-index:1000}
+.skip:focus{top:10px}
+header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 20px}
+.logo{font-weight:800;font-size:1.2rem;text-decoration:none;color:var(--primary-dark)}
+nav ul{display:flex;flex-wrap:wrap;gap:16px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-weight:700}
+.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+button{font:inherit;border:1px solid var(--border);background:var(--surface);color:var(--text);padding:8px 12px;border-radius:8px;cursor:pointer}
+button:hover{background:var(--hero)}
+.hero{background:var(--hero);padding:70px 20px}
+.hero-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.25fr .75fr;gap:45px;align-items:center}
+.kicker{font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--primary)}
+h1{font-size:clamp(2.3rem,6vw,4.5rem);line-height:1.05;margin:12px 0 20px}
+h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15}
+h3{line-height:1.25}
+.lead{font-size:1.2rem;max-width:720px}
+.cta{display:inline-block;background:var(--primary);color:white;padding:13px 20px;border-radius:9px;text-decoration:none;font-weight:800;margin-top:12px}
+.hero-card{background:#fff;border:2px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 8px 30px #17352a16}
+.jaguar{font-size:5rem;text-align:center;margin-bottom:10px}
+main section{padding:70px 20px}
+.container{max-width:1180px;margin:auto}
+.section-intro{max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid.two{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;height:100%}
+.card .num{font-weight:900;color:var(--primary);font-size:1.1rem}
+.icon{font-size:2rem}
+.quote{border-left:6px solid var(--accent);padding:20px 24px;background:#fff;border-radius:8px;font-size:1.25rem;font-weight:700}
+.steps{counter-reset:step}
+.step{position:relative;padding-left:58px}
+.step:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:800}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.timeline .card{border-top:6px solid var(--primary)}
+.access{background:#17352a;color:#fff}
+.access a{color:#fff}
+footer{background:#0e2c21;color:#fff;padding:35px 20px}
+footer a{color:#fff}
+.small{font-size:.9rem;color:var(--muted)}
+.access .small{color:#e5f1eb}
+.center{text-align:center}
+.pill{display:inline-block;border:1px solid var(--border);border-radius:999px;padding:4px 10px;margin:3px;font-size:.9rem;background:#fff}
+form{display:grid;gap:14px;max-width:700px}
+label{font-weight:700}
+input,textarea{font:inherit;padding:12px;border:2px solid var(--border);border-radius:8px;background:#fff;color:var(--text)}
+textarea{min-height:120px}
+@media(max-width:850px){
+ .hero-inner,.grid.two{grid-template-columns:1fr}
+ .grid,.timeline{grid-template-columns:1fr 1fr}
+ nav ul{display:none}
+}
+@media(max-width:560px){
+ .grid,.timeline{grid-template-columns:1fr}
+ .nav{align-items:flex-start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *{animation:none!important;transition:none!important}
+}
+body.high-contrast{--bg:#fff;--surface:#fff;--text:#000;--muted:#111;--primary:#003b22;--primary-dark:#002a18;--border:#000;--hero:#eee}
+body.large-text{--font-size:21px}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#inicio" aria-label="Raíz Chinampera, inicio">Raíz Chinampera</a>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="#problema">Problema</a></li>
+        <li><a href="#propuesta">Propuesta</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#impacto">Impacto</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="controls" aria-label="Controles de accesibilidad">
+      <button type="button" id="contrast">Alto contraste</button>
+      <button type="button" id="textSize">Texto grande</button>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+<section class="hero" id="inicio">
+ <div class="hero-inner">
+  <div>
+   <p class="kicker">Comercio justo · Xochimilco</p>
+   <h1>De la chinampa a tu mesa.</h1>
+   <p class="lead">Verdura fresca, trazable y con precio justo, que mantiene viva el agua de Xochimilco.</p>
+   <a class="cta" href="#propuesta">Conoce la propuesta</a>
+  </div>
+  <div class="hero-card" aria-label="Presentación de Raíz Chinampera">
+   <div class="jaguar" aria-hidden="true">🌱</div>
+   <h2>Raíz Chinampera</h2>
+   <p>Una red de comercio justo entre las chinamperas y chinamperos de Xochimilco y la ciudad que los rodea.</p>
+   <span class="pill">Trazabilidad</span><span class="pill">Precio justo</span><span class="pill">Conservación</span>
+  </div>
+ </div>
+</section>
+
+<section id="problema">
+ <div class="container">
+  <div class="section-intro">
+   <p class="kicker">01 · El problema</p>
+   <h2>Proteger la chinampa también significa hacer rentable cultivarla.</h2>
+   <p>Xochimilco conserva un importante sistema de chinampas, pero la presión urbana, la contaminación, el turismo desordenado y la falta de relevo generacional ponen en riesgo la actividad agrícola.</p>
+  </div>
+  <div class="grid">
+   <article class="card"><div class="num">01</div><h3>Agua contaminada</h3><p>La calidad del agua de riego afecta los cultivos y especies nativas.</p></article>
+   <article class="card"><div class="num">02</div><h3>Presión urbana y turismo</h3><p>El crecimiento urbano y un turismo masivo desplazan la vocación agrícola.</p></article>
+   <article class="card"><div class="num">03</div><h3>Caída de la producción</h3><p>La superficie con uso agrícola activo se ha reducido de forma importante.</p></article>
+   <article class="card"><div class="num">04</div><h3>Sin relevo generacional</h3><p>Los bajos ingresos pueden llevar a las nuevas generaciones a abandonar el oficio.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="propuesta" style="background:#eef4ef">
+ <div class="container">
+  <p class="kicker">02 · Propuesta de valor</p>
+  <h2>Una compra que conecta alimento, productor y conservación.</h2>
+  <div class="quote">“De la chinampa a tu mesa: verdura fresca, trazable y con precio justo, que mantiene viva el agua de Xochimilco.”</div>
+  <div class="grid" style="margin-top:25px">
+   <article class="card"><div class="icon" aria-hidden="true">📍</div><h3>Trazabilidad total</h3><p>Cada canasta indica la chinampa y la familia productora de origen.</p></article>
+   <article class="card"><div class="icon" aria-hidden="true">🥬</div><h3>Frescura</h3><p>La propuesta contempla cosecha en menos de 24 horas y producción sin agroquímicos.</p></article>
+   <article class="card"><div class="icon" aria-hidden="true">💧</div><h3>Conservación activa</h3><p>Cada compra contribuye al mantenimiento del canal y el humedal que producen los alimentos.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="como-funciona">
+ <div class="container">
+  <p class="kicker">03 · Cómo funciona</p>
+  <h2>La red se construye con productores, clientes y experiencias.</h2>
+  <div class="grid two steps">
+   <article class="card step"><h3>Compra justa y capacitación</h3><p>Contratos de compra estable a precio justo, junto con asesoría técnica y agroecológica.</p></article>
+   <article class="card step"><h3>Pedidos digitales</h3><p>La plataforma puede complementarse con App o WhatsApp para registrar cosechas, pedidos y pagos.</p></article>
+   <article class="card step"><h3>Cooperativa con voz y voto</h3><p>Las y los chinamperos participan como socios en decisiones y utilidades.</p></article>
+   <article class="card step"><h3>Turismo vivencial</h3><p>Recorridos y talleres permiten conocer el trabajo de la chinampa y pagar directamente al productor anfitrión.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="ingresos" style="background:#f0eadc">
+ <div class="container">
+  <p class="kicker">04 · Modelo de ingresos</p>
+  <h2>Varias formas de sostener la red.</h2>
+  <div class="grid">
+   <article class="card"><h3>Canastas por suscripción</h3><p>Hogares pagan una membresía fija y reciben verdura de temporada.</p></article>
+   <article class="card"><h3>Venta a restaurantes</h3><p>Contratos B2B para insumos trazables y de proximidad.</p></article>
+   <article class="card"><h3>Turismo y talleres</h3><p>Recorridos y actividades de siembra o cocina con reparto al anfitrión.</p></article>
+   <article class="card"><h3>Productos derivados</h3><p>Mermeladas, tés y conservas de hierbas de chinampa.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="publico">
+ <div class="container">
+  <p class="kicker">05 · Personas a las que sirve</p>
+  <div class="grid two">
+   <article class="card">
+    <h3>Productores incluidos</h3>
+    <p>Familias productoras de San Gregorio Atlapulco, San Luis Tlaxialtemalco y Santa Cruz Xochimilco; mujeres chinamperas y jóvenes herederos de chinampas.</p>
+   </article>
+   <article class="card">
+    <h3>Mercado meta</h3>
+    <p>Hogares urbanos de la CDMX, restaurantes de cocina mexicana, mercados orgánicos, tianguis y personas interesadas en turismo cultural.</p>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="impacto" style="background:#eef4ef">
+ <div class="container">
+  <p class="kicker">06 · Escalabilidad</p>
+  <h2>Crecimiento por etapas</h2>
+  <div class="timeline">
+   <article class="card"><h3>Año 1</h3><p><strong>Piloto.</strong> 10–15 chinampas aliadas en San Gregorio Atlapulco y entregas en la zona sur.</p></article>
+   <article class="card"><h3>Año 2</h3><p><strong>Consolidación.</strong> Crecimiento a tres pueblos chinamperos y venta a restaurantes.</p></article>
+   <article class="card"><h3>Año 3</h3><p><strong>Diversificación.</strong> Derivados y programa formal de turismo vivencial.</p></article>
+   <article class="card"><h3>Años 4–5</h3><p><strong>Réplica regional.</strong> Adaptación a otras zonas chinamperas y humedales del Valle de México.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="access" id="accesibilidad">
+ <div class="container">
+  <p class="kicker" style="color:#d6e8dc">07 · Metodología POUR</p>
+  <h2>Un sitio pensado para diferentes capacidades.</h2>
+  <div class="grid">
+   <article class="card" style="color:#17352a"><h3>Perceptible</h3><p>Texto legible, estructura con encabezados, contraste configurable, etiquetas y contenido que no depende únicamente del color.</p></article>
+   <article class="card" style="color:#17352a"><h3>Operable</h3><p>Navegación por teclado, enlace para saltar al contenido, botones grandes y objetivos de interacción claros.</p></article>
+   <article class="card" style="color:#17352a"><h3>Comprensible</h3><p>Lenguaje directo, secciones previsibles, navegación consistente y formularios con etiquetas.</p></article>
+   <article class="card" style="color:#17352a"><h3>Robusto</h3><p>HTML semántico, atributos ARIA cuando aportan información y compatibilidad con tecnologías de asistencia.</p></article>
+  </div>
+  <p class="small">También se respeta la preferencia del sistema para reducir movimiento y se ofrecen controles para aumentar texto y contraste.</p>
+ </div>
+</section>
+
+<section id="contacto">
+ <div class="container">
+  <p class="kicker">08 · Contacto</p>
+  <h2>Conecta con Raíz Chinampera</h2>
+  <p>Esta sección representa la interacción futura del sitio con hogares, restaurantes y productores.</p>
+  <form onsubmit="event.preventDefault(); document.getElementById('mensaje').textContent='Gracias. Este formulario es una demostración de la maqueta.';">
+   <div><label for="nombre">Nombre</label><input id="nombre" name="nombre" autocomplete="name" required></div>
+   <div><label for="correo">Correo electrónico</label><input id="correo" name="correo" type="email" autocomplete="email" required></div>
+   <div><label for="mensaje-form">Mensaje</label><textarea id="mensaje-form" name="mensaje"></textarea></div>
+   <button type="submit">Enviar mensaje</button>
+  </form>
+  <p id="mensaje" role="status" aria-live="polite"></p>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  <h2>Raíz Chinampera</h2>
+  <p>Una propuesta de modelo de negocio inclusivo para fortalecer la relación entre la chinampería y la ciudad.</p>
+  <p class="small">Maqueta académica · Emiliano Ventura Madrigal</p>
+ </div>
+</footer>
+
+<script>
+const contrast=document.getElementById('contrast');
+const textSize=document.getElementById('textSize');
+contrast.addEventListener('click',()=>{
+ document.body.classList.toggle('high-contrast');
+ contrast.setAttribute('aria-pressed',document.body.classList.contains('high-contrast'));
+});
+textSize.addEventListener('click',()=>{
+ document.body.classList.toggle('large-text');
+ textSize.setAttribute('aria-pressed',document.body.classList.contains('large-text'));
+});
+</script>
+</body>
+</html>
